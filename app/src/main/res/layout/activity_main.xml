@@ -5,15 +5,114 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/text_login_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello Android!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="로그인"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="150dp"/>
+
+    <EditText
+        android:id="@+id/edit_login_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="아이디"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/text_login_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="120dp"
+        android:layout_marginHorizontal="30dp"/>
+
+    <EditText
+        android:id="@+id/edittext_login_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/edit_login_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="30dp"/>
+
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:backgroundTint="@color/puple"
+        app:layout_constraintTop_toBottomOf="@id/edittext_login_password"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_login_social"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/button_login"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+        <ImageView
+            android:id="@+id/img_login_google"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logo_google" />
+
+        <ImageView
+            android:id="@+id/img_login_naver"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logo_naver"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
+
+        <ImageView
+            android:id="@+id/img_login_kakao"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_logo_kakao" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_login_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@id/ll_login_social"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_login_findpassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 찾기"
+            android:textSize="10sp"/>
+
+        <TextView
+            android:id="@+id/tv_login_signup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가입하기"
+            android:textSize="10sp"
+            android:layout_marginStart="16dp" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
