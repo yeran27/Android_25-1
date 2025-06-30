@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">BCSD_Android_2025-1</string>
-    <string name="app_name">MusicApp</string>
     <string name="permission_needed">권한이 필요합니다.</string>
     <string name="request_permission">권한 요청</string>
     <string name="open_settings">설정으로 이동</string>
     <string name="music_title">제목</string>
     <string name="music_artist">가수</string>
     <string name="music_time">00:00</string>
-    </resources>
 </resources>
