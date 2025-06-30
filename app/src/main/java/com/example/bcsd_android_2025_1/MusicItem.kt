@@ -1,7 +1,10 @@
 package com.example.bcsd_android_2025_1
 
-data class MusicItem(
+import android.net.Uri
+
+data class MusicData(
     val title: String,
     val artist: String,
-    val duration: Long
+    val duration: Long,
+    val uri: Uri
 )

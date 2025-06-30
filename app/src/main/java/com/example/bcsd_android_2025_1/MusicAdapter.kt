@@ -6,8 +6,14 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class MusicAdapter(private val musicList: List<MusicData>) :
-    RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
+class MusicAdapter(
+    private val musicList: List<MusicData>,
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<MusicAdapter.MusicViewHolder>() {
+
+    interface OnItemClickListener {
+        fun onItemClick(music: MusicData)
+    }
 
     class MusicViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val titleText: TextView = view.findViewById(R.id.textTitle)
@@ -28,12 +34,15 @@ class MusicAdapter(private val musicList: List<MusicData>) :
         holder.titleText.text = music.title
         holder.artistText.text = music.artist
         holder.durationText.text = formatDuration(music.duration)
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(music)
+        }
     }
 
     private fun formatDuration(durationMs: Long): String {
-        val totalSeconds = durationMs / 1000
-        val minutes = totalSeconds / 60
-        val seconds = totalSeconds % 60
-        return String.format("%02d:%02d", minutes, seconds)
+        val totalSec = durationMs / 1000
+        val min = totalSec / 60
+        val sec = totalSec % 60
+        return String.format("%02d:%02d", min, sec)
     }
 }
